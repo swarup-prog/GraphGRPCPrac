@@ -38,7 +38,7 @@ server.addService(courseProto.CourseService.service, {
 });
 
 server.bindAsync(
-  "localhost:5009",
+  "127.0.0.1:50051",
   grpc.ServerCredentials.createInsecure(),
   (error, port) => {
     if (error) {

@@ -11,6 +11,7 @@ const schema = buildSchema(`
   type Query {
     getAllCourses: [Course!]! 
     getCourse(id: ID!): Course
+  }
 `);
 
 export default schema;

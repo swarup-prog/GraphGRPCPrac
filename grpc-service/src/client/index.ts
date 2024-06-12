@@ -1,7 +1,8 @@
-import grpc from "@grpc/grpc-js";
-import protoLoader from "@grpc/proto-loader";
+import * as grpc from "@grpc/grpc-js";
+import * as protoLoader from "@grpc/proto-loader";
+import path from "path";
 
-const PROTO_PATH = "../proto/course.proto";
+const PROTO_PATH = path.join(__dirname, "../proto/course.proto");
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
   keepCase: true,
@@ -15,7 +16,7 @@ const CourseService: any =
   grpc.loadPackageDefinition(packageDefinition).CourseService;
 
 const client = new CourseService(
-  "localhost:50051",
+  "127.0.0.1:50051",
   grpc.credentials.createInsecure()
 );
 
