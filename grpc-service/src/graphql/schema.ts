@@ -8,7 +8,7 @@ const schema = buildSchema(`
     level: String!
   }
 
-  type Mutation {
+  type Query {
     getAllCourses: [Course!]! 
     getCourse(id: ID!): Course
 `);
